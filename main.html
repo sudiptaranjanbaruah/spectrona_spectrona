@@ -1,0 +1,1418 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#F7F4E9" />
+  <meta name="description"
+    content="Spectrona 2026 — A celebration of technology, culture and creativity at NFSU Guwahati." />
+
+  <title>SPECTRONA '26 — Beyond the Ordinary</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&family=DM+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <style>
+    :root {
+      --paper: #F7F4E9;
+      --ink: #171717;
+      --red: #C1121F;
+      --gold: #F4A208;
+      --green: #2E7755;
+      --teal: #157D86;
+      --line: 2px solid var(--ink);
+      --shadow: 6px 6px 0 var(--ink);
+      --display: "Bricolage Grotesque", sans-serif;
+      --mono: "DM Mono", monospace;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--display);
+      background: var(--paper);
+      color: var(--ink);
+      overflow-x: hidden;
+    }
+
+    ::selection {
+      background: var(--gold);
+      color: var(--ink);
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button {
+      font: inherit;
+      cursor: pointer;
+    }
+
+    .container {
+      width: min(1320px, 92%);
+      margin-inline: auto;
+    }
+
+    /* Navigation */
+
+    .navbar {
+      height: 84px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-inline: 4%;
+      border-bottom: var(--line);
+      background: var(--paper);
+      position: relative;
+      z-index: 20;
+    }
+
+    .brand {
+      font-size: 1.7rem;
+      font-weight: 800;
+      letter-spacing: -0.09em;
+    }
+
+    .brand span {
+      color: var(--red);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+
+    .nav-links a {
+      font-family: var(--mono);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      transition: color .2s;
+    }
+
+    .nav-links a:hover {
+      color: var(--red);
+    }
+
+    .nav-cta,
+    .btn {
+      display: inline-flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 23px;
+      border: var(--line);
+      background: var(--gold);
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: .82rem;
+      text-transform: uppercase;
+      box-shadow: 4px 4px 0 var(--ink);
+      transition: transform .2s, box-shadow .2s;
+    }
+
+    .nav-cta:hover,
+    .btn:hover {
+      transform: translate(4px, 4px);
+      box-shadow: 0 0 0 var(--ink);
+    }
+
+    .menu-toggle {
+      display: none;
+      border: var(--line);
+      background: var(--gold);
+      padding: 10px 13px;
+      font-size: 1.2rem;
+    }
+
+    /* Announcement */
+
+    .announcement {
+      padding: 12px 0;
+      background: var(--red);
+      color: white;
+      overflow: hidden;
+      border-bottom: var(--line);
+    }
+
+    .marquee {
+      display: flex;
+      width: max-content;
+      animation: scroll 25s linear infinite;
+    }
+
+    .marquee-track {
+      display: flex;
+      align-items: center;
+      gap: 38px;
+      padding-right: 38px;
+      white-space: nowrap;
+      font-family: var(--mono);
+      font-size: .8rem;
+      font-weight: 500;
+      letter-spacing: .08em;
+    }
+
+    @keyframes scroll {
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* Hero */
+
+    .hero {
+      position: relative;
+      min-height: 740px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      border-bottom: var(--line);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(23,23,23,.065) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(23,23,23,.065) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding-block: 90px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border: var(--line);
+      background: white;
+      font-family: var(--mono);
+      font-size: .75rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      margin-bottom: 30px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 9px;
+      height: 9px;
+      background: var(--red);
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      50% { opacity: .25; }
+    }
+
+    .hero-title {
+      font-size: clamp(5rem, 14vw, 13rem);
+      line-height: .78;
+      letter-spacing: -.105em;
+      font-weight: 800;
+      text-transform: uppercase;
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-title .second {
+      display: block;
+      color: var(--red);
+    }
+
+    .hero-title .year {
+      display: inline-block;
+      font-size: .23em;
+      letter-spacing: -.04em;
+      vertical-align: top;
+      margin-top: 12px;
+      margin-left: 15px;
+      color: var(--ink);
+    }
+
+    .hero-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 30px;
+      margin-top: 58px;
+    }
+
+    .hero-description {
+      max-width: 480px;
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      line-height: 1.5;
+      font-weight: 600;
+    }
+
+    .hero-description strong {
+      color: var(--red);
+    }
+
+    .hero-meta {
+      text-align: right;
+      font-family: var(--mono);
+      font-size: .8rem;
+      line-height: 2;
+      text-transform: uppercase;
+    }
+
+    .hero-stamp {
+      position: absolute;
+      right: 9%;
+      top: 12%;
+      width: 135px;
+      height: 135px;
+      display: grid;
+      place-items: center;
+      background: var(--gold);
+      border: var(--line);
+      border-radius: 50%;
+      transform: rotate(15deg);
+      font-family: var(--mono);
+      font-weight: 500;
+      font-size: .8rem;
+      text-align: center;
+      box-shadow: var(--shadow);
+    }
+
+    /* Stats */
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-bottom: var(--line);
+    }
+
+    .stat {
+      padding: 45px 25px;
+      text-align: center;
+      border-right: var(--line);
+    }
+
+    .stat:last-child {
+      border-right: none;
+    }
+
+    .stat h3 {
+      font-size: clamp(2.5rem, 5vw, 5rem);
+      line-height: 1;
+      letter-spacing: -.08em;
+    }
+
+    .stat p {
+      margin-top: 13px;
+      font-family: var(--mono);
+      text-transform: uppercase;
+      font-size: .72rem;
+      letter-spacing: .07em;
+    }
+
+    .stat:nth-child(2) {
+      background: var(--gold);
+    }
+
+    .stat:nth-child(4) {
+      background: var(--green);
+      color: white;
+    }
+
+    /* General sections */
+
+    section {
+      scroll-margin-top: 25px;
+    }
+
+    .section {
+      padding: 115px 0;
+    }
+
+    .section-label {
+      font-family: var(--mono);
+      font-size: .75rem;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-label::before {
+      content: "";
+      height: 10px;
+      width: 10px;
+      background: var(--red);
+    }
+
+    .section-title {
+      font-size: clamp(3.3rem, 7vw, 7rem);
+      line-height: .95;
+      letter-spacing: -.075em;
+      font-weight: 800;
+      text-transform: uppercase;
+      max-width: 1000px;
+    }
+
+    .section-title em {
+      color: var(--red);
+      font-style: normal;
+    }
+
+    /* About */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 90px;
+      align-items: center;
+    }
+
+    .about-copy {
+      font-size: 1.2rem;
+      line-height: 1.75;
+      max-width: 570px;
+      margin-top: 35px;
+    }
+
+    .about-copy p + p {
+      margin-top: 20px;
+    }
+
+    .artwork {
+      aspect-ratio: 1;
+      border: var(--line);
+      background: var(--gold);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 12px 12px 0 var(--ink);
+    }
+
+    .artwork-circle {
+      position: absolute;
+      width: 65%;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      background: var(--red);
+      border: 3px solid var(--ink);
+      top: 16%;
+      left: 17%;
+    }
+
+    .artwork-square {
+      position: absolute;
+      width: 45%;
+      aspect-ratio: 1;
+      background: var(--teal);
+      border: 3px solid var(--ink);
+      transform: rotate(30deg);
+      top: 26%;
+      left: 27%;
+    }
+
+    .artwork-text {
+      position: absolute;
+      bottom: 25px;
+      left: 25px;
+      right: 25px;
+      font-size: clamp(2.2rem, 4vw, 4.5rem);
+      line-height: .9;
+      letter-spacing: -.08em;
+      font-weight: 800;
+      color: white;
+      text-shadow: 3px 3px 0 var(--ink);
+      z-index: 2;
+    }
+
+    .artwork-top {
+      position: absolute;
+      top: 22px;
+      left: 22px;
+      z-index: 2;
+      font-family: var(--mono);
+      font-size: .75rem;
+      background: var(--paper);
+      padding: 10px;
+      border: var(--line);
+    }
+
+    /* Events */
+
+    .events-section {
+      background: var(--ink);
+      color: var(--paper);
+      border-block: var(--line);
+    }
+
+    .events-intro {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 55px;
+    }
+
+    .events-intro p {
+      max-width: 300px;
+      line-height: 1.6;
+      color: #c8c8c8;
+    }
+
+    .event-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .event-card {
+      background: var(--paper);
+      color: var(--ink);
+      border: 2px solid var(--paper);
+      padding: 30px;
+      min-height: 330px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform .25s;
+    }
+
+    .event-card:hover {
+      transform: translateY(-8px);
+    }
+
+    .event-card:nth-child(2) {
+      background: var(--gold);
+    }
+
+    .event-card:nth-child(3) {
+      background: var(--teal);
+      color: white;
+    }
+
+    .event-card:nth-child(4) {
+      background: var(--red);
+      color: white;
+    }
+
+    .event-card:nth-child(5) {
+      background: var(--green);
+      color: white;
+    }
+
+    .event-card:nth-child(6) {
+      background: #E6C9EA;
+    }
+
+    .event-number {
+      font-family: var(--mono);
+      font-size: .75rem;
+    }
+
+    .event-symbol {
+      font-size: 4rem;
+      line-height: 1;
+      margin-block: 20px;
+    }
+
+    .event-card h3 {
+      font-size: clamp(1.8rem, 3vw, 2.8rem);
+      line-height: 1;
+      letter-spacing: -.055em;
+      text-transform: uppercase;
+    }
+
+    .event-card p {
+      font-size: .9rem;
+      margin-top: 15px;
+      line-height: 1.5;
+    }
+
+    /* Manifesto */
+
+    .manifesto {
+      background: var(--gold);
+      padding: 100px 0;
+      border-bottom: var(--line);
+    }
+
+    .manifesto-text {
+      font-size: clamp(2.5rem, 6vw, 6rem);
+      line-height: 1.08;
+      letter-spacing: -.065em;
+      font-weight: 800;
+    }
+
+    .manifesto-text span {
+      color: var(--red);
+    }
+
+    /* Schedule */
+
+    .schedule-list {
+      margin-top: 60px;
+      border-top: var(--line);
+    }
+
+    .schedule-row {
+      display: grid;
+      grid-template-columns: 180px 1fr 50px;
+      gap: 30px;
+      padding: 32px 10px;
+      border-bottom: var(--line);
+      align-items: center;
+      transition: background .2s, padding .2s;
+    }
+
+    .schedule-row:hover {
+      background: var(--gold);
+      padding-inline: 20px;
+    }
+
+    .schedule-date {
+      font-family: var(--mono);
+      font-size: .9rem;
+    }
+
+    .schedule-info h3 {
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      letter-spacing: -.055em;
+      text-transform: uppercase;
+    }
+
+    .schedule-info p {
+      margin-top: 7px;
+      font-size: .9rem;
+    }
+
+    .schedule-arrow {
+      font-size: 2rem;
+      text-align: right;
+    }
+
+    /* Countdown */
+
+    .countdown-section {
+      background: var(--red);
+      color: white;
+      padding: 100px 0;
+      border-block: var(--line);
+      text-align: center;
+    }
+
+    .countdown-section h2 {
+      font-size: clamp(2.5rem, 6vw, 6rem);
+      line-height: 1;
+      letter-spacing: -.07em;
+      text-transform: uppercase;
+    }
+
+    .countdown {
+      display: flex;
+      justify-content: center;
+      gap: clamp(12px, 4vw, 60px);
+      margin-top: 60px;
+      flex-wrap: wrap;
+    }
+
+    .countdown-unit {
+      min-width: 100px;
+    }
+
+    .countdown-value {
+      font-size: clamp(3rem, 9vw, 8rem);
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: -.08em;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .countdown-label {
+      margin-top: 12px;
+      font-family: var(--mono);
+      font-size: .75rem;
+      letter-spacing: .15em;
+    }
+
+    /* CTA */
+
+    .cta-section {
+      padding: 140px 0;
+      text-align: center;
+    }
+
+    .cta-section h2 {
+      font-size: clamp(4rem, 11vw, 11rem);
+      line-height: .85;
+      letter-spacing: -.095em;
+      text-transform: uppercase;
+      margin-bottom: 45px;
+    }
+
+    .cta-section h2 span {
+      color: var(--red);
+    }
+
+    .cta-section p {
+      max-width: 520px;
+      margin: 0 auto 40px;
+      font-size: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .cta-section .btn {
+      background: var(--red);
+      color: white;
+      padding: 22px 40px;
+      font-size: 1rem;
+    }
+
+    /* Footer */
+
+    footer {
+      background: var(--ink);
+      color: white;
+      padding: 70px 0 25px;
+    }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 40px;
+      align-items: flex-start;
+      padding-bottom: 65px;
+    }
+
+    .footer-logo {
+      font-size: clamp(3rem, 8vw, 8rem);
+      line-height: .9;
+      font-weight: 800;
+      letter-spacing: -.09em;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      font-family: var(--mono);
+      font-size: .8rem;
+      text-transform: uppercase;
+    }
+
+    .footer-links a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #555;
+      padding-top: 25px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      font-family: var(--mono);
+      font-size: .7rem;
+      color: #aaa;
+    }
+
+    /* Scroll animation */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(35px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 950px) {
+      .nav-links {
+        display: none;
+        position: absolute;
+        top: 84px;
+        left: 0;
+        right: 0;
+        background: var(--paper);
+        border-bottom: var(--line);
+        padding: 30px 4%;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .nav-links.open {
+        display: flex;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+      }
+
+      .artwork {
+        max-width: 550px;
+      }
+
+      .event-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-stamp {
+        width: 100px;
+        height: 100px;
+        right: 5%;
+        top: 6%;
+        font-size: .65rem;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .navbar {
+        height: 70px;
+      }
+
+      .nav-links {
+        top: 70px;
+      }
+
+      .hero {
+        min-height: 650px;
+      }
+
+      .hero-content {
+        padding-block: 115px 65px;
+      }
+
+      .hero-title {
+        font-size: clamp(3.9rem, 15vw, 6rem);
+      }
+
+      .hero-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: 45px;
+      }
+
+      .hero-meta {
+        text-align: left;
+      }
+
+      .stats {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stat:nth-child(2) {
+        border-right: none;
+      }
+
+      .stat:nth-child(-n+2) {
+        border-bottom: var(--line);
+      }
+
+      .section {
+        padding: 75px 0;
+      }
+
+      .event-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .events-intro {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .schedule-row {
+        grid-template-columns: 1fr 30px;
+        gap: 12px;
+      }
+
+      .schedule-date {
+        grid-column: 1 / -1;
+      }
+
+      .footer-top,
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .countdown-unit {
+        min-width: 65px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+
+      .reveal {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <a class="brand" href="#home" aria-label="Spectrona Home">
+      SPECTRONA<span>®</span>
+    </a>
+
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#events">Events</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#countdown">Countdown</a>
+      <a class="nav-cta" href="https://spectrona.in/">
+        Explore Spectrona ↗
+      </a>
+    </nav>
+
+    <button class="menu-toggle"
+      id="menuToggle"
+      aria-label="Toggle menu"
+      aria-expanded="false">
+      ☰
+    </button>
+  </header>
+
+  <!-- Moving announcement -->
+  <div class="announcement" aria-label="Festival announcement">
+    <div class="marquee">
+      <div class="marquee-track">
+        <span>SPECTRONA 2026</span>
+        <span>✳</span>
+        <span>13 — 15 NOVEMBER</span>
+        <span>✳</span>
+        <span>NFSU GUWAHATI</span>
+        <span>✳</span>
+        <span>TECH × CULTURE × CREATIVITY</span>
+        <span>✳</span>
+        <span>BEYOND THE ORDINARY</span>
+        <span>✳</span>
+      </div>
+      <div class="marquee-track" aria-hidden="true">
+        <span>SPECTRONA 2026</span>
+        <span>✳</span>
+        <span>13 — 15 NOVEMBER</span>
+        <span>✳</span>
+        <span>NFSU GUWAHATI</span>
+        <span>✳</span>
+        <span>TECH × CULTURE × CREATIVITY</span>
+        <span>✳</span>
+        <span>BEYOND THE ORDINARY</span>
+        <span>✳</span>
+      </div>
+    </div>
+  </div>
+
+  <main>
+
+    <!-- Hero -->
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <div class="eyebrow">
+          The inaugural tech & cultural festival
+        </div>
+
+        <h1 class="hero-title">
+          SPEC
+          <span class="second">
+            TRONA<span class="year">'26</span>
+          </span>
+        </h1>
+
+        <div class="hero-bottom">
+          <p class="hero-description">
+            Where <strong>logic meets imagination.</strong>
+            Where creativity knows no boundaries.
+            Where the extraordinary begins.
+          </p>
+
+          <div class="hero-meta">
+            <div>13 — 15 November 2026</div>
+            <div>NFSU Guwahati, Assam</div>
+            <div>India / 26.1445° N</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-stamp" aria-hidden="true">
+        MADE<br>
+        TO BE<br>
+        DIFFERENT ↗
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <div class="stats" aria-label="Festival highlights">
+      <div class="stat">
+        <h3>03</h3>
+        <p>Days of madness</p>
+      </div>
+      <div class="stat">
+        <h3>24</h3>
+        <p>Events</p>
+      </div>
+      <div class="stat">
+        <h3>₹4.5L</h3>
+        <p>Prize pool</p>
+      </div>
+      <div class="stat">
+        <h3>∞</h3>
+        <p>Possibilities</p>
+      </div>
+    </div>
+
+    <!-- About -->
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="reveal">
+          <div class="section-label">01 / The idea</div>
+
+          <h2 class="section-title">
+            NOT JUST<br>
+            ANOTHER<br>
+            <em>FEST.</em>
+          </h2>
+
+          <div class="about-copy">
+            <p>
+              Spectrona is the inaugural technology and cultural
+              festival of National Forensic Sciences University,
+              Guwahati Campus.
+            </p>
+
+            <p>
+              A collision of curious minds, audacious ideas,
+              unexpected discoveries, fierce competitions,
+              and unforgettable performances.
+            </p>
+
+            <p>
+              Rooted in Assam. Powered by innovation.
+              Built for everyone who refuses to be ordinary.
+            </p>
+          </div>
+        </div>
+
+        <div class="artwork reveal" role="img"
+          aria-label="Abstract geometric Spectrona artwork">
+          <div class="artwork-top">
+            SPECTRONA / EST. 2026
+          </div>
+          <div class="artwork-circle"></div>
+          <div class="artwork-square"></div>
+          <div class="artwork-text">
+            THINK.<br>
+            MAKE.<br>
+            BREAK.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Events -->
+    <section class="section events-section" id="events">
+      <div class="container">
+        <div class="events-intro reveal">
+          <div>
+            <div class="section-label">02 / Explore</div>
+            <h2 class="section-title">
+              PICK YOUR<br>
+              <em>BATTLE.</em>
+            </h2>
+          </div>
+
+          <p>
+            From technology to art, there's a stage for every
+            kind of brilliance.
+          </p>
+        </div>
+
+        <div class="event-grid">
+
+          <article class="event-card reveal">
+            <span class="event-number">CATEGORY / 001</span>
+            <div class="event-symbol" aria-hidden="true">⌘</div>
+            <div>
+              <h3>Cyber<br>Security</h3>
+              <p>
+                Break codes. Hunt vulnerabilities.
+                Outsmart the machine.
+              </p>
+            </div>
+          </article>
+
+          <article class="event-card reveal">
+            <span class="event-number">CATEGORY / 002</span>
+            <div class="event-symbol" aria-hidden="true">⚡</div>
+            <div>
+              <h3>Tech<br>Challenges</h3>
+              <p>
+                Turn impossible problems into
+                extraordinary solutions.
+              </p>
+            </div>
+          </article>
+
+          <article class="event-card reveal">
+            <span class="event-number">CATEGORY / 003</span>
+            <div class="event-symbol" aria-hidden="true">◈</div>
+            <div>
+              <h3>Creative<br>Arts</h3>
+              <p>
+                Ideas, expression and imagination
+                without limits.
+              </p>
+            </div>
+          </article>
+
+          <article class="event-card reveal">
+            <span class="event-number">CATEGORY / 004</span>
+            <div class="event-symbol" aria-hidden="true">♫</div>
+            <div>
+              <h3>Music &<br>Culture</h3>
+              <p>
+                Let the rhythms rise and
+                the stage come alive.
+              </p>
+            </div>
+          </article>
+
+          <article class="event-card reveal">
+            <span class="event-number">CATEGORY / 005</span>
+            <div class="event-symbol" aria-hidden="true">✳</div>
+            <div>
+              <h3>Workshops &<br>Learning</h3>
+              <p>
+                Meet new ideas and discover
+                what comes next.
+              </p>
+            </div>
+          </article>
+
+          <article class="event-card reveal">
+            <span class="event-number">CATEGORY / 006</span>
+            <div class="event-symbol" aria-hidden="true">★</div>
+            <div>
+              <h3>Beyond<br>The Rest</h3>
+              <p>
+                Surprises, challenges and moments
+                worth remembering.
+              </p>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Manifesto -->
+    <section class="manifesto">
+      <div class="container reveal">
+        <div class="section-label">03 / Our manifesto</div>
+
+        <p class="manifesto-text">
+          WE BELIEVE THAT
+          <span>GREAT IDEAS</span>
+          DON'T ASK FOR PERMISSION.
+          THEY ARRIVE, DISRUPT,
+          AND CHANGE
+          <span>EVERYTHING.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- Schedule -->
+    <section class="section" id="schedule">
+      <div class="container">
+        <div class="section-label">04 / The timeline</div>
+
+        <h2 class="section-title reveal">
+          THREE DAYS.<br>
+          <em>ONE STORY.</em>
+        </h2>
+
+        <div class="schedule-list">
+
+          <div class="schedule-row reveal">
+            <div class="schedule-date">
+              FRI / NOV 13
+            </div>
+            <div class="schedule-info">
+              <h3>The Beginning</h3>
+              <p>
+                Day One — A new chapter unfolds.
+              </p>
+            </div>
+            <div class="schedule-arrow">↗</div>
+          </div>
+
+          <div class="schedule-row reveal">
+            <div class="schedule-date">
+              SAT / NOV 14
+            </div>
+            <div class="schedule-info">
+              <h3>The Momentum</h3>
+              <p>
+                Day Two — The energy intensifies.
+              </p>
+            </div>
+            <div class="schedule-arrow">↗</div>
+          </div>
+
+          <div class="schedule-row reveal">
+            <div class="schedule-date">
+              SUN / NOV 15
+            </div>
+            <div class="schedule-info">
+              <h3>The Finale</h3>
+              <p>
+                Day Three — Make it unforgettable.
+              </p>
+            </div>
+            <div class="schedule-arrow">↗</div>
+          </div>
+
+        </div>
+
+        <p style="font-family:var(--mono);font-size:.75rem;margin-top:20px;">
+          * The above is a thematic overview, not the official event timetable.
+        </p>
+      </div>
+    </section>
+
+    <!-- Countdown -->
+    <section class="countdown-section" id="countdown">
+      <div class="container">
+        <div class="section-label" style="justify-content:center;">
+          05 / The clock is ticking
+        </div>
+
+        <h2>
+          THE FUTURE<br>
+          IS ALMOST HERE.
+        </h2>
+
+        <div class="countdown" role="timer">
+          <div class="countdown-unit">
+            <div class="countdown-value" id="days">00</div>
+            <div class="countdown-label">DAYS</div>
+          </div>
+          <div class="countdown-unit">
+            <div class="countdown-value" id="hours">00</div>
+            <div class="countdown-label">HOURS</div>
+          </div>
+          <div class="countdown-unit">
+            <div class="countdown-value" id="minutes">00</div>
+            <div class="countdown-label">MINUTES</div>
+          </div>
+          <div class="countdown-unit">
+            <div class="countdown-value" id="seconds">00</div>
+            <div class="countdown-label">SECONDS</div>
+          </div>
+        </div>
+
+        <p id="countdownMessage"
+          style="font-family:var(--mono);margin-top:35px;font-size:.85rem;">
+          Until Spectrona 2026 begins.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta-section">
+      <div class="container reveal">
+        <div class="section-label" style="justify-content:center;">
+          06 / Your moment
+        </div>
+
+        <h2>
+          BE<br>
+          <span>PART</span><br>
+          OF IT.
+        </h2>
+
+        <p>
+          History isn't made by those who watch from the sidelines.
+          The next chapter is yours to write.
+        </p>
+
+        <a href="https://spectrona.in/" class="btn">
+          Discover Spectrona <span>↗</span>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="footer-logo">SPECTRONA.</div>
+          <p style="font-family:var(--mono);margin-top:25px;font-size:.8rem;">
+            NFSU GUWAHATI / ASSAM / INDIA
+          </p>
+        </div>
+
+        <div class="footer-links">
+          <a href="#home">Home ↗</a>
+          <a href="#about">About ↗</a>
+          <a href="#events">Events ↗</a>
+          <a href="#schedule">Schedule ↗</a>
+          <a href="https://spectrona.in/">Official Website ↗</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2026 SPECTRONA — NFSU GUWAHATI</span>
+        <span>CRAFTED FOR THE CURIOUS.</span>
+        <span>BACK TO TOP ↑</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    "use strict";
+
+    // Mobile navigation
+    const menuToggle = document.getElementById("menuToggle");
+    const navLinks = document.getElementById("navLinks");
+
+    menuToggle.addEventListener("click", () => {
+      const isOpen = navLinks.classList.toggle("open");
+
+      menuToggle.setAttribute("aria-expanded", String(isOpen));
+      menuToggle.textContent = isOpen ? "✕" : "☰";
+    });
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+      link.addEventListener("click", () => {
+        navLinks.classList.remove("open");
+        menuToggle.setAttribute("aria-expanded", "false");
+        menuToggle.textContent = "☰";
+      });
+    });
+
+    // Festival countdown
+    // Midnight on 13 November in Indian Standard Time.
+    // Replace with the official inauguration time if required.
+    const festivalDate = new Date("2026-11-13T00:00:00+05:30").getTime();
+
+    const dayElement = document.getElementById("days");
+    const hourElement = document.getElementById("hours");
+    const minuteElement = document.getElementById("minutes");
+    const secondElement = document.getElementById("seconds");
+    const countdownMessage = document.getElementById("countdownMessage");
+
+    const pad = value => String(value).padStart(2, "0");
+
+    function updateCountdown() {
+      const distance = festivalDate - Date.now();
+
+      if (distance <= 0) {
+        dayElement.textContent = "00";
+        hourElement.textContent = "00";
+        minuteElement.textContent = "00";
+        secondElement.textContent = "00";
+        countdownMessage.textContent = "SPECTRONA 2026 HAS ARRIVED!";
+        return true;
+      }
+
+      const days = Math.floor(distance / 86400000);
+      const hours = Math.floor((distance % 86400000) / 3600000);
+      const minutes = Math.floor((distance % 3600000) / 60000);
+      const seconds = Math.floor((distance % 60000) / 1000);
+
+      dayElement.textContent = pad(days);
+      hourElement.textContent = pad(hours);
+      minuteElement.textContent = pad(minutes);
+      secondElement.textContent = pad(seconds);
+
+      return false;
+    }
+
+    updateCountdown();
+
+    const countdownInterval = setInterval(() => {
+      if (updateCountdown()) {
+        clearInterval(countdownInterval);
+      }
+    }, 1000);
+
+    // Reveal sections on scroll
+    const revealElements = document.querySelectorAll(".reveal");
+
+    if ("IntersectionObserver" in window) {
+      const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.1,
+        rootMargin: "0px 0px -30px 0px"
+      });
+
+      revealElements.forEach(element => observer.observe(element));
+    } else {
+      revealElements.forEach(element => {
+        element.classList.add("visible");
+      });
+    }
+
+    // Make footer back-to-top functional
+    document.querySelector(".footer-bottom span:last-child")
+      .addEventListener("click", () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+    document.querySelector(".footer-bottom span:last-child")
+      .style.cursor = "pointer";
+  </script>
+
+</body>
+</html>
+
